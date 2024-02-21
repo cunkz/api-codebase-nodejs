@@ -11,7 +11,7 @@ class QueryRepository {
   }
 
   async getDB() {
-    const ctx = 'cmd-repo-getDB';
+    const ctx = 'qry-repo_getDB';
     try {
       const {data: { connection: cacheConnection, dbName }} = await mongodbConn.fetchConnection(this.config);
       return wrapper.data(cacheConnection.db(dbName).collection(this.collectionName));
@@ -22,7 +22,7 @@ class QueryRepository {
   };
 
   async getUserByEmail(email) {
-    const ctx = 'qry-repo-getUserByEmail';
+    const ctx = 'qry-repo_getUserByEmail';
     try {
       const { data: db } = await this.getDB();
       const parameter = { email: email };

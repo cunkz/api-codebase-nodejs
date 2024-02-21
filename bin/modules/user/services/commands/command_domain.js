@@ -14,7 +14,7 @@ class User {
   }
 
   async registerUser(payload) {
-    const ctx = 'cmd-domain-registerUser';
+    const ctx = 'cmd-domain_registerUser';
     let { email, password } = payload;
     const checkUser = await this.query.getUserByEmail(email);
     if(checkUser.err && checkUser.err.message != 'Data not found') return checkUser;
@@ -31,7 +31,7 @@ class User {
   }
 
   async authUser(payload) {
-    const ctx = 'cmd-domain-authUser';
+    const ctx = 'cmd-domain_authUser';
     let { email, password } = payload;
     const checkUser = await this.query.getUserByEmail(email);
     if(checkUser.err) {

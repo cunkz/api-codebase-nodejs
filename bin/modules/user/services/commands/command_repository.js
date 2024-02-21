@@ -12,7 +12,7 @@ class CommandRepository {
   }
 
   async getDB() {
-    const ctx = 'cmd-repo-getDB';
+    const ctx = 'cmd-repo_getDB';
     try {
       const {data: { connection: cacheConnection, dbName }} = await mongodbConn.fetchConnection(this.config);
       return wrapper.data(cacheConnection.db(dbName).collection(this.collectionName));
@@ -23,7 +23,7 @@ class CommandRepository {
   };
 
   async addUser(email, password) {
-    const ctx = 'cmd-repo-addUser';
+    const ctx = 'cmd-repo_addUser';
     try {
       const { data:db } = await this.getDB();
       const document = {
