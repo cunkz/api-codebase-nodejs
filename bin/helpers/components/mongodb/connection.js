@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const configs = require('../../configs/global_config');
+// const configs = require('../../configs/global_config');
 const wrapper = require('../../utils/wrapper');
 const logger = require('../../utils/logger');
 
